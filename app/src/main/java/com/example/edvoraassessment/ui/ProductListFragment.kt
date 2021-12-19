@@ -158,6 +158,7 @@ class ProductListFragment : Fragment() {
         dialog.show()
     }
 
+    /**handling the filter selection*/
     private fun handleSelection(idInput: Int, dropDown: AutoCompleteTextView, et: EditText) {
         dropDown.setOnItemClickListener { parent, view, position, id ->
             val text = view as TextView
@@ -166,24 +167,24 @@ class ProductListFragment : Fragment() {
                 R.id.tie_product -> {
                     val result = products.filter { it.product_name == text.text}
                     val adapterItem = mutableListOf<ParentItem>()
-                    result.forEach {
-                        adapterItem.add(ParentItem(it.product_name, result))
+                    result.toSet().forEach {
+                        adapterItem.add(ParentItem(it.product_name, listOf(result[0])))
                     }
                     parentAdapter.setData(adapterItem)
                 }
                 R.id.tie_state -> {
                     val result = products.filter { it.address.state == text.text}
                     val adapterItem = mutableListOf<ParentItem>()
-                    result.forEach {
-                        adapterItem.add(ParentItem(it.address.state, result))
+                    result.toSet().forEach {
+                        adapterItem.add(ParentItem(it.address.state, listOf(result[0])))
                     }
                     parentAdapter.setData(adapterItem)
                 }
                 R.id.tie_city -> {
                     val result = products.filter { it.address.city == text.text}
                     val adapterItem = mutableListOf<ParentItem>()
-                    result.forEach {
-                        adapterItem.add(ParentItem(it.address.city, result))
+                    result.toSet().forEach {
+                        adapterItem.add(ParentItem(it.address.city, listOf(result[0])))
                     }
                     parentAdapter.setData(adapterItem)
                 }
