@@ -12,5 +12,7 @@ This simple app displays a list of products, the brand and the name of the Compa
 - [FaceBook Shimmer Recyclerview](https://facebook.github.io/shimmer-android/)
 - [Coil](https://github.com/coil-kt/coil)
 - And more
-
+![](app/src/main/res/drawable-v24/screenshot_one.png)
+![](app/src/main/res/drawable-v24/screenshot_2.png)
+![](app/src/main/res/drawable-v24/screen_shot_3.png)
 
