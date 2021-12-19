@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        android:paddingStart="29dp"
+        tools:context=".ui.ProductListFragment">
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edvora"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:fontFamily="@font/sf_pro_rounded_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_filter"
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/button_backgroung"
+            android:drawableRight="@drawable/ic_arrow_drop_down"
+            android:drawableTint="@color/white"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp"
+            android:singleLine="true"
+            android:text="@string/filters"
+            android:textAllCaps="false"
+            app:fontFamily="@font/sf_pro_rounded_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/button_backgroung"
+            android:text="@string/clear_filter"
+            android:textAllCaps="false"
+            android:paddingEnd="10dp"
+            app:fontFamily="@font/sf_pro_rounded_regular"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_filter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/btn_filter"
+            app:layout_constraintTop_toTopOf="@+id/btn_filter"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.todkars.shimmer.ShimmerRecyclerView
+            android:id="@+id/parent_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:shimmer_recycler_item_count="3"
+            app:shimmer_recycler_layout="@layout/place_holder_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_filter"
+            app:layout_constraintVertical_bias="0.271" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

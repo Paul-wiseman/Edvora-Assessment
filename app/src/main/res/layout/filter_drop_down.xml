@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingStart="28dp"
+    android:paddingEnd="42dp"
+    android:background="#131313"
+    android:layout_height="wrap_content">
+
+
+    <EditText
+        android:id="@+id/et_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:backgroundTint="@color/white"
+        android:inputType="textPersonName"
+        android:hint="@string/filter"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        app:fontFamily="@font/sf_pro_rounded_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_state"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:boxBackgroundColor="@color/background_color"
+        app:endIconTint="@color/white"
+        app:boxStrokeWidth="0dp"
+        app:fontFamily="@font/sf_pro_rounded_regular"
+        app:boxStrokeWidthFocused="0dp"
+        android:textColorHint="@color/white"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/til_product"
+        app:layout_constraintStart_toStartOf="@+id/til_product"
+        app:layout_constraintTop_toBottomOf="@+id/til_product">
+
+        <AutoCompleteTextView
+            android:id="@+id/tie_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/city"
+            android:textColor="@color/white"
+            app:fontFamily="@font/sf_pro_rounded_regular"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_product"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:hintTextColor="@color/white"
+        app:boxBackgroundColor="@color/background_color"
+        app:endIconTint="@color/white"
+        android:hint="@string/product"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/et_filter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/et_filter"
+        app:layout_constraintTop_toBottomOf="@+id/et_filter">
+
+        <AutoCompleteTextView
+            android:id="@+id/tie_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            app:hintTextColor="@color/white"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_city"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="24dp"
+        android:hint="@string/state"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:boxBackgroundColor="@color/background_color"
+        app:endIconTint="@color/white"
+        app:fontFamily="@font/sf_pro_rounded_regular"
+        app:hintTextColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/til_state"
+        app:layout_constraintStart_toStartOf="@+id/til_state"
+        app:layout_constraintTop_toBottomOf="@+id/til_state">
+
+        <AutoCompleteTextView
+            android:id="@+id/tie_city"
+            app:fontFamily="@font/sf_pro_rounded_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

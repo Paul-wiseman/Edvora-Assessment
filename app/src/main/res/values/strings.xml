@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">EdvoraAssessment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edvora">Edvora</string>
+    <string name="filter">Filter</string>
+    <string name="product">Product</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="filters">Filters</string>
+    <string name="clear_filter">clear filter</string>
+    <string name="date">Date:</string>
+    <string name="_10_12_2021">10:12:2021</string>
+</resources>
