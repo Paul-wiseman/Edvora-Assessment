@@ -98,7 +98,6 @@ class ProductListFragment : Fragment() {
         }
     }
 
-
     /** Displays the filter dialog*/
     private fun dialog() {
         val productsList = mutableSetOf<String>()
