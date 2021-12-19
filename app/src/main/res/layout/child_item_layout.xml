@@ -41,6 +41,7 @@
                     loadImageFromUrl="@{product.image}"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:scaleType="fitXY"
                     android:background="@color/button_backgroung"
                     android:src="@drawable/place_holder_image"
                     app:layout_constraintStart_toStartOf="parent"

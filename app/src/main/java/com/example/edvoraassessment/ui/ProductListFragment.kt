@@ -3,14 +3,16 @@ package com.example.edvoraassessment.ui
 import android.app.Dialog
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import android.widget.EditText
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.edvoraassessment.R
@@ -32,7 +34,7 @@ class ProductListFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: MainViewModel by activityViewModels()
     private lateinit var products: List<ProductItem>
-    private lateinit var firstProductsList:  List<ParentItem>
+    private lateinit var firstProductsList: List<ParentItem>
     private val parentAdapter by lazy {
         ParentItemAdapter()
     }
@@ -153,7 +155,11 @@ class ProductListFragment : Fragment() {
                     city.toList()
                 )
             )
-            handleSelection(R.id.tie_city,dialog.findViewById(R.id.tie_city), dialog.findViewById(R.id.et_filter))
+            handleSelection(
+                R.id.tie_city,
+                dialog.findViewById(R.id.tie_city),
+                dialog.findViewById(R.id.et_filter)
+            )
         }
         dialog.show()
     }
@@ -165,7 +171,7 @@ class ProductListFragment : Fragment() {
             et.setText(text.text)
             when (idInput) {
                 R.id.tie_product -> {
-                    val result = products.filter { it.product_name == text.text}
+                    val result = products.filter { it.product_name == text.text }
                     val adapterItem = mutableListOf<ParentItem>()
                     result.toSet().forEach {
                         adapterItem.add(ParentItem(it.product_name, listOf(result[0])))
@@ -173,7 +179,7 @@ class ProductListFragment : Fragment() {
                     parentAdapter.setData(adapterItem)
                 }
                 R.id.tie_state -> {
-                    val result = products.filter { it.address.state == text.text}
+                    val result = products.filter { it.address.state == text.text }
                     val adapterItem = mutableListOf<ParentItem>()
                     result.toSet().forEach {
                         adapterItem.add(ParentItem(it.address.state, listOf(result[0])))
@@ -181,7 +187,7 @@ class ProductListFragment : Fragment() {
                     parentAdapter.setData(adapterItem)
                 }
                 R.id.tie_city -> {
-                    val result = products.filter { it.address.city == text.text}
+                    val result = products.filter { it.address.city == text.text }
                     val adapterItem = mutableListOf<ParentItem>()
                     result.toSet().forEach {
                         adapterItem.add(ParentItem(it.address.city, listOf(result[0])))
